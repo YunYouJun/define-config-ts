@@ -1,5 +1,5 @@
 {
-  "name": "defint-config-ts",
+  "name": "define-config-ts",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@10.9.0",
@@ -10,12 +10,12 @@
   },
   "license": "MIT",
   "funding": "https://github.com/sponsors/YunYouJun",
-  "homepage": "https://github.com/YunYouJun/defint-config-ts#readme",
+  "homepage": "https://github.com/YunYouJun/define-config-ts#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YunYouJun/defint-config-ts.git"
+    "url": "git+https://github.com/YunYouJun/define-config-ts.git"
   },
-  "bugs": "https://github.com/YunYouJun/defint-config-ts/issues",
+  "bugs": "https://github.com/YunYouJun/define-config-ts/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {

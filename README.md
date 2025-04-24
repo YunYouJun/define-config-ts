@@ -1,4 +1,4 @@
-# defint-config-ts
+# define-config-ts
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -70,13 +70,13 @@ If you want a minimalist library for loading `*.config.ts`, consider `define-con
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/defint-config-ts?style=flat&colorA=080f12&colorB=1fa669
-[npm-version-href]: https://npmjs.com/package/defint-config-ts
-[npm-downloads-src]: https://img.shields.io/npm/dm/defint-config-ts?style=flat&colorA=080f12&colorB=1fa669
-[npm-downloads-href]: https://npmjs.com/package/defint-config-ts
-[bundle-src]: https://img.shields.io/bundlephobia/minzip/defint-config-ts?style=flat&colorA=080f12&colorB=1fa669&label=minzip
-[bundle-href]: https://bundlephobia.com/result?p=defint-config-ts
-[license-src]: https://img.shields.io/github/license/YunYouJun/defint-config-ts.svg?style=flat&colorA=080f12&colorB=1fa669
-[license-href]: https://github.com/YunYouJun/defint-config-ts/blob/main/LICENSE
+[npm-version-src]: https://img.shields.io/npm/v/define-config-ts?style=flat&colorA=080f12&colorB=1fa669
+[npm-version-href]: https://npmjs.com/package/define-config-ts
+[npm-downloads-src]: https://img.shields.io/npm/dm/define-config-ts?style=flat&colorA=080f12&colorB=1fa669
+[npm-downloads-href]: https://npmjs.com/package/define-config-ts
+[bundle-src]: https://img.shields.io/bundlephobia/minzip/define-config-ts?style=flat&colorA=080f12&colorB=1fa669&label=minzip
+[bundle-href]: https://bundlephobia.com/result?p=define-config-ts
+[license-src]: https://img.shields.io/github/license/YunYouJun/define-config-ts.svg?style=flat&colorA=080f12&colorB=1fa669
+[license-href]: https://github.com/YunYouJun/define-config-ts/blob/main/LICENSE
 [jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669
-[jsdocs-href]: https://www.jsdocs.io/package/defint-config-ts
+[jsdocs-href]: https://www.jsdocs.io/package/define-config-ts
