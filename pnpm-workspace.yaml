@@ -1,0 +1,32 @@
+packages:
+  - playground
+  - docs
+  - packages/*
+  - examples/*
+catalog:
+  jiti: ^2.4.2
+catalogs:
+  cli:
+    '@antfu/eslint-config': ^4.12.0
+    '@antfu/ni': ^24.3.0
+    bumpp: ^10.1.0
+    eslint: ^9.25.1
+    lint-staged: ^15.5.1
+    simple-git-hooks: ^2.13.0
+    tsx: ^4.19.3
+    typescript: ^5.8.3
+    unbuild: ^3.5.0
+    vite: ^6.3.3
+  inlined:
+    '@antfu/utils': ^9.2.0
+  testing:
+    vitest: ^3.1.2
+    vitest-package-exports: ^0.1.1
+    yaml: ^2.7.1
+  types:
+    '@types/node': ^22.14.1
+  utils:
+    tinyexec: ^1.0.1
+onlyBuiltDependencies:
+  - esbuild
+  - simple-git-hooks
