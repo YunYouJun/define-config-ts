@@ -40,10 +40,6 @@ catalogs:
     jiti:
       specifier: ^2.4.2
       version: 2.4.2
-  inlined:
-    '@antfu/utils':
-      specifier: ^9.2.0
-      version: 9.2.0
   testing:
     vitest:
       specifier: ^3.1.2
@@ -77,9 +73,6 @@ importers:
       '@antfu/ni':
         specifier: catalog:cli
         version: 24.3.0
-      '@antfu/utils':
-        specifier: catalog:inlined
-        version: 9.2.0
       '@types/node':
         specifier: catalog:types
         version: 22.14.1
@@ -177,9 +170,6 @@ packages:
   '@antfu/ni@24.3.0':
     resolution: {integrity: sha512-wBSav4mBxvHEW9RbdSo1SWLQ6MAlT0Dc423weC58yOWqW4OcMvtnNDdDrxOZeJ88fEIyPK93gDUWIelBxzSf8g==}
     hasBin: true
-
-  '@antfu/utils@9.2.0':
-    resolution: {integrity: sha512-Oq1d9BGZakE/FyoEtcNeSwM7MpDO2vUBi11RWBZXf75zPsbUVWmUs03EqkRFrcgbXyKTas0BdZWC1wcuSoqSAw==}
 
   '@babel/code-frame@7.26.2':
     resolution: {integrity: sha512-RJlIHRueQgwWitWgF8OdFYGZX328Ax5BCemNGlqHfplnRT9ESi8JkFlvaVYbS+UubVY6dpv87Fs2u5M29iNFVQ==}
@@ -2941,8 +2931,6 @@ snapshots:
       fzf: 0.5.2
       package-manager-detector: 1.2.0
       tinyexec: 1.0.1
-
-  '@antfu/utils@9.2.0': {}
 
   '@babel/code-frame@7.26.2':
     dependencies:

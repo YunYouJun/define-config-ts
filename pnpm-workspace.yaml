@@ -17,8 +17,6 @@ catalogs:
     typescript: ^5.8.3
     unbuild: ^3.5.0
     vite: ^6.3.3
-  inlined:
-    '@antfu/utils': ^9.2.0
   testing:
     vitest: ^3.1.2
     vitest-package-exports: ^0.1.1
