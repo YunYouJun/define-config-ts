@@ -37,6 +37,23 @@ const { config, configFile } = await loadConfig({
 })
 ```
 
+### Define `defineLibConfig`
+
+```ts [your-lib]
+import { defineDefineConfig } from 'define-config-ts'
+
+export interface LibConfig {
+  /**
+   * enable feature
+   */
+  features: {
+    [key: string]: any
+  }
+}
+
+export const defineLibConfig = defineDefineConfig<LibConfig>()
+```
+
 ## Difference with `c12` / `unconfig`
 
 - [c12](https://github.com/unjs/c12)
