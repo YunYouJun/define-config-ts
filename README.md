@@ -48,7 +48,7 @@ Under certain circumstances(in [valaxy](https://github.com/YunYouJun/valaxy)), I
 
 `unconfig` load config need 2-3s, `c12` only need 0.2s, and custom `loadConfig` by `jiti` directly is 0.0006s 0.6ms.
 
-I only want to load `*.config.ts` and do not wish to support other formats and complex functions.
+I only want to load `*.config.ts` and do not wish to support other formats and complex merging features.
 
 So I created this package `define-config-ts`.
 
@@ -66,7 +66,7 @@ If you want a minimalist library for loading `*.config.ts`, consider `define-con
 
 ## License
 
-[MIT](./LICENSE) License © [Anthony Fu](https://github.com/YunYouJun)
+[MIT](./LICENSE) License © [YunYouJun](https://github.com/YunYouJun)
 
 <!-- Badges -->
 
