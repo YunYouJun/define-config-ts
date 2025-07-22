@@ -65,6 +65,10 @@ export async function loadConfig<T extends UserInputConfig = UserInputConfig>(op
   catch {
     // eslint-disable-next-line no-console
     console.debug(`Config file not found: ${filePath}`)
+    return {
+      config: {} as T,
+      configFile: '',
+    }
   }
 
   return {
