@@ -53,7 +53,7 @@ export interface LoadConfigOptions {
  * @param options
  */
 export async function loadConfig<T extends UserInputConfig = UserInputConfig>(options: LoadConfigOptions): Promise<ResolvedConfig<T>> {
-  const { name, cwd = process.cwd(), configFile = '' } = options
+  const { name, cwd = process.cwd(), configFile = '', throwOnNotFound = true } = options
   const filePath = configFile || resolve(cwd, `${name}.config.ts`)
 
   let data = {} as T
@@ -70,7 +70,7 @@ export async function loadConfig<T extends UserInputConfig = UserInputConfig>(op
     }
   }
   catch {
-    if (options.throwOnNotFound) {
+    if (throwOnNotFound) {
       throw new Error(`Config file not found: ${filePath}`)
     }
     else {
