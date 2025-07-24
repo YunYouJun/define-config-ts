@@ -1,7 +1,7 @@
 {
   "name": "define-config-ts",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "packageManager": "pnpm@10.13.1",
   "description": "Define and load *.config.ts",
   "author": {
