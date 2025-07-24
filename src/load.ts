@@ -39,6 +39,13 @@ export interface LoadConfigOptions {
    * override cwd/name.config.ts
    */
   configFile?: string
+
+  /**
+   * if the config file not found, throw error
+   * if false, return empty config
+   * @default true
+   */
+  throwOnNotFound?: boolean
 }
 
 /**
@@ -63,11 +70,14 @@ export async function loadConfig<T extends UserInputConfig = UserInputConfig>(op
     }
   }
   catch {
-    // eslint-disable-next-line no-console
-    console.debug(`Config file not found: ${filePath}`)
-    return {
-      config: {} as T,
-      configFile: '',
+    if (options.throwOnNotFound) {
+      throw new Error(`Config file not found: ${filePath}`)
+    }
+    else {
+      return {
+        config: {} as T,
+        configFile: filePath,
+      }
     }
   }
 
