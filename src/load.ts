@@ -58,27 +58,28 @@ export async function loadConfig<T extends UserInputConfig = UserInputConfig>(op
 
   let data = {} as T
 
-  try {
-    await fs.access(filePath, constants.F_OK)
-
-    try {
-      data = (await jiti.import(filePath, { default: true })) as T
-    }
-    catch (e) {
-      console.error(e)
-      console.error(`Failed to load config file: ${filePath}`)
-    }
-  }
-  catch {
+  /**
+   * is filePath exists
+   */
+  const isExists = await fs.access(filePath, constants.F_OK).then(() => true).catch(() => false)
+  if (!isExists) {
     if (throwOnNotFound) {
       throw new Error(`Config file not found: ${filePath}`)
     }
     else {
       return {
         config: {} as T,
-        configFile: filePath,
+        configFile: '',
       }
     }
+  }
+
+  try {
+    data = (await jiti.import(filePath, { default: true })) as T
+  }
+  catch (e) {
+    console.error(e)
+    console.error(`Failed to load config file: ${filePath}`)
   }
 
   return {
