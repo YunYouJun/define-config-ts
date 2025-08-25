@@ -21,24 +21,13 @@ export type ConfigFunction<T, Options> = (options: Options) => (T | Promise<T>)
 /**
  * load *.config.ts
  */
-export interface LoadConfigOptions {
+export type LoadConfigOptions = {
   /**
    * The directory to resolve the config file from.
    *
    * @default process.cwd()
    */
   cwd?: string
-  /**
-   * The name of the config file to load.
-   *
-   * load {name}.config.ts
-   */
-  name: string
-  /**
-   * full config file path
-   * override cwd/name.config.ts
-   */
-  configFile?: string
 
   /**
    * if the config file not found, throw error
@@ -46,15 +35,42 @@ export interface LoadConfigOptions {
    * @default true
    */
   throwOnNotFound?: boolean
-}
+} & (
+  | {
+    /**
+     * The name of the config file to load.
+     *
+     * load {name}.config.ts
+     */
+    name: string
+    /**
+     * full/relative config file path
+     * override cwd/name.config.ts
+     */
+    configFile?: string
+  }
+  | {
+    /**
+     * The name of the config file to load.
+     *
+     * load {name}.config.ts
+     */
+    name?: string
+    /**
+     * full/relative config file path
+     * override cwd/name.config.ts
+     */
+    configFile: string
+  }
+)
 
 /**
  * load `{name}.config.ts` file
  * @param options
  */
 export async function loadConfig<T extends UserInputConfig = UserInputConfig>(options: LoadConfigOptions): Promise<ResolvedConfig<T>> {
-  const { name, cwd = process.cwd(), configFile = '', throwOnNotFound = true } = options
-  const filePath = configFile || resolve(cwd, `${name}.config.ts`)
+  const { cwd = process.cwd(), configFile = '', throwOnNotFound = true } = options
+  const filePath = resolve(cwd, configFile || `${options.name}.config.ts`)
 
   let data = {} as T
 
