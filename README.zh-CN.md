@@ -8,9 +8,9 @@
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
-Minimalist `*.config.ts` loader — zero dependency on modern Node.js.
+极简 `*.config.ts` 加载器 — 在现代 Node.js 上零额外依赖。
 
-## Quick Start
+## 快速开始
 
 ```bash
 pnpm add define-config-ts
@@ -21,60 +21,60 @@ import { loadConfig } from 'define-config-ts'
 
 const { config, configFile } = await loadConfig({
   cwd: process.cwd(),
-  name: 'your-lib', // loads your-lib.config.ts
+  name: 'your-lib', // 加载 your-lib.config.ts
 })
 ```
 
-## Why not `c12` / `unconfig`?
+## 为什么不用 `c12` / `unconfig`？
 
-[c12](https://github.com/unjs/c12) and [unconfig](https://github.com/antfu-collective/unconfig) are powerful tools that support many formats (`ts`, `mts`, `cts`, `js`, `mjs`, `cjs`, `json`, …) and complex config merging.
+[c12](https://github.com/unjs/c12) 和 [unconfig](https://github.com/antfu-collective/unconfig) 功能很强，支持多种格式（`ts`、`mts`、`cts`、`js`、`mjs`、`cjs`、`json` 等）以及复杂的配置合并。
 
-But sometimes you only need `*.config.ts` — nothing else. A quick benchmark in [valaxy](https://github.com/YunYouJun/valaxy):
+但有时候你只需要加载 `*.config.ts`。在 [valaxy](https://github.com/YunYouJun/valaxy) 中做过的简单 benchmark：
 
-| Tool | Load time |
+| 工具 | 加载时间 |
 | --- | --- |
 | `unconfig` | ~2-3 s |
 | `c12` | ~0.2 s |
 | `define-config-ts` | **~0.6 ms** |
 
-If you need broader format support or config merging, use `c12` or `unconfig`.
-If you want a minimal, fast `*.config.ts` loader — this is it.
+如果你需要更广泛的格式支持或配置合并，请使用 `c12` 或 `unconfig`。
+如果你只想要一个极简、快速的 `*.config.ts` 加载器 — 就是它了。
 
-## Features
+## 特性
 
-- Fresh-load friendly: when `moduleCache` is `false` (default) and [jiti](https://github.com/unjs/jiti) is available, repeated loads can pick up config changes in dev/HMR flows.
-- Native-compatible: on modern Node.js with built-in TypeScript loading, it works without extra dependencies and falls back to native `import()` when `jiti` is unavailable. Note: without `jiti`, Node's built-in module cache applies and `moduleCache: false` cannot force a fresh reload.
-- Type-safe `defineConfig` helper via `defineDefineConfig<T>()`.
+- Fresh reload 友好：当 `moduleCache` 为 `false`（默认值）且存在 [jiti](https://github.com/unjs/jiti) 时，重复加载可以在 dev/HMR 流程中拿到变更后的配置。
+- 原生兼容：在现代 Node.js 的原生 TypeScript 加载可用时，无需额外依赖即可工作；若未安装 `jiti`，会回退到原生 `import()`。注意：没有 `jiti` 时 Node 内置模块缓存生效，`moduleCache: false` 无法强制重新加载。
+- 类型安全：通过 `defineDefineConfig<T>()` 创建带类型提示的 `defineConfig` 辅助函数。
 
-## Compatibility
+## 兼容性
 
-| Node.js | Loading strategy | Extra dependency |
+| Node.js | 加载策略 | 额外依赖 |
 | --- | --- | --- |
-| `>= 22.6` (native TS support) | Prefer `jiti` for fresh reloads; falls back to native `import()` | None (recommended: `pnpm add jiti`) |
+| `>= 22.6`（原生 TS 支持） | 优先使用 `jiti` 以支持 fresh reload；未安装时回退到原生 `import()` | 无（推荐：`pnpm add jiti`） |
 | `18.x` / `20.x` | `jiti` | `pnpm add jiti` |
 
-> **Tip**: On modern Node.js, installing `jiti` enables `moduleCache: false` (default) so that repeated loads always pick up the latest config — essential for HMR / dev-server workflows.
+> **提示**：在现代 Node.js 上安装 `jiti` 可启用 `moduleCache: false`（默认值），使重复加载始终拿到最新配置——这在 HMR / dev-server 场景中至关重要。
 
-For older Node.js, install `jiti` alongside:
+旧版 Node.js 请同时安装 `jiti`：
 
 ```bash
 pnpm add define-config-ts jiti
 ```
 
-## Usage
+## 使用
 
-### Load config
+### 加载配置
 
 ```ts
 import { loadConfig } from 'define-config-ts'
 
 const { config, configFile } = await loadConfig({
   cwd: process.cwd(),
-  name: 'your-lib', // loads your-lib.config.ts
+  name: 'your-lib', // 加载 your-lib.config.ts
 })
 ```
 
-### User-facing config file
+### 用户侧配置文件
 
 ```ts [your-lib.config.ts]
 import { defineConfig } from 'your-lib'
@@ -84,7 +84,7 @@ export default defineConfig({
 })
 ```
 
-### Create a typed `defineConfig`
+### 创建带类型的 `defineConfig`
 
 ```ts [your-lib/config.ts]
 import { defineDefineConfig } from 'define-config-ts'
